@@ -1,207 +1,261 @@
 {{ define "main" }}
-<main class="flex-1 flex flex-col">
-<!-- Hero Section -->
-<section class="max-w-7xl mx-auto px-6 py-12 md:py-24 grid lg:grid-cols-2 gap-16 items-center">
-<div class="space-y-8">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold tracking-widest uppercase">
-<span class="relative flex h-2 w-2">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-</span>
-                        v2.1 Stable Release
+<header class="relative min-h-[90vh] flex flex-col justify-center overflow-hidden grid-bg">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+        <div class="z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-mono mb-6">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                V2.2 ENGINEERING_RELEASE
+            </div>
+            <h1 class="text-6xl md:text-7xl font-bold tracking-tight mb-6 font-mono uppercase">
+                3U BARE<br/>
+                <span class="text-blue-500">METAL</span> CLUSTERS.
+            </h1>
+            <p class="text-lg text-slate-400 max-w-xl mb-10 leading-relaxed">
+                Industrial-grade 3U chassis for high-density compute. Designed for Raspberry Pi and Nvidia Jetson SOMs with integrated PCIe switching for high-bandwidth I/O.
+            </p>
+            <div class="flex flex-wrap gap-4 font-mono">
+                <button class="px-8 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded transition-all text-sm tracking-widest">CONFIGURE_CHASSIS</button>
+                <button class="px-8 py-3 border border-slate-700 hover:bg-slate-800 rounded transition-all text-sm tracking-widest">TECHNICAL_SPECS</button>
+            </div>
+            <div class="mt-16 grid grid-cols-3 gap-8 border-t border-slate-800 pt-8">
+                <div>
+                    <div class="text-2xl font-bold font-mono">3U</div>
+                    <div class="text-[10px] uppercase font-mono tracking-widest text-slate-500">Rack Height</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold font-mono">10GbE</div>
+                    <div class="text-[10px] uppercase font-mono tracking-widest text-slate-500">Link Aggregation</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-bold font-mono">REDUNDANT</div>
+                    <div class="text-[10px] uppercase font-mono tracking-widest text-slate-500">Power Supply</div>
+                </div>
+            </div>
+        </div>
+        <div class="relative group">
+            <div class="absolute inset-0 bg-blue-600/5 blur-[100px] rounded-full"></div>
+            <div class="relative aspect-square bg-slate-900/50 rounded-2xl border border-slate-800 overflow-hidden p-8 flex items-center justify-center">
+                <div class="scanline"></div>
+                <div class="relative w-full h-full">
+                    <img alt="PCB Schematic Visualization" class="w-full h-full object-contain opacity-40 mix-blend-screen" src="{{ "images/pcb_schematic.png" | relURL }}"/>
+                    <div class="absolute top-1/4 left-1/3 group/h1">
+                        <div class="w-4 h-4 bg-blue-500 rounded-full animate-pulse cursor-pointer"></div>
+                        <div class="absolute left-6 top-0 w-56 p-4 bg-slate-900 border border-blue-500/40 rounded shadow-2xl opacity-0 scale-95 transition-all group-hover/h1:opacity-100 group-hover/h1:scale-100 pointer-events-none z-20">
+                            <div class="text-[10px] font-mono text-blue-400 mb-1">SOC_INTERFACE</div>
+                            <div class="text-xs text-slate-300 mb-2">Dual-node architecture supports both Raspberry Pi CM4 and Nvidia Orin Nano/Xavier.</div>
+                            <div class="font-mono text-[9px] text-blue-500 uppercase tracking-tighter">Status: Active_Ready</div>
+                        </div>
                     </div>
-<h1 class="text-5xl md:text-7xl font-black leading-[1.1] tracking-tighter">
-                        HIGH-AVAILABILITY <br/>
-<span class="text-primary">BLADE CLUSTERS.</span>
-</h1>
-<p class="text-lg md:text-xl text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed font-light">
-                        Industrial-grade carrier boards for Raspberry Pi CM4 and Nvidia Jetson SOM. Designed for edge AI, distributed storage, and silent home-lab efficiency.
-                    </p>
-<div class="flex flex-wrap gap-4 pt-4">
-<button class="px-8 py-4 bg-primary text-white rounded font-bold text-sm tracking-widest uppercase hover:shadow-lg hover:shadow-primary/20 transition-all">
-                            Configure Your Stack
-                        </button>
-<button class="px-8 py-4 bg-transparent border border-slate-300 dark:border-slate-700 rounded font-bold text-sm tracking-widest uppercase hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
-                            View Documentation
-                        </button>
-</div>
-<div class="pt-12 grid grid-cols-3 gap-8 border-t border-slate-200 dark:border-slate-800">
-<div>
-<div class="text-2xl font-bold font-mono">15W</div>
-<div class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Max Power per Node</div>
-</div>
-<div>
-<div class="text-2xl font-bold font-mono">2.5GbE</div>
-<div class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Networking Speed</div>
-</div>
-<div>
-<div class="text-2xl font-bold font-mono">PoE+</div>
-<div class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Integrated Power</div>
-</div>
-</div>
-</div>
-<div class="relative">
-<div class="absolute -inset-4 bg-primary/5 blur-3xl rounded-full"></div>
-<div class="relative bg-white dark:bg-slate-900 tech-border rounded-xl p-2 shadow-2xl">
-<div class="aspect-square bg-slate-100 dark:bg-slate-800 rounded-lg overflow-hidden">
-<img alt="Top-down view of a high-tech custom PCB board with glowing components" class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700" data-alt="Technical top-down view of a custom PCB node" src="{{ "images/board.jpg" | relURL }}"/>
-</div>
-<div class="absolute top-6 right-6 flex flex-col gap-2">
-<div class="px-3 py-1 bg-black/60 backdrop-blur-md rounded text-[10px] font-mono text-white border border-white/20 uppercase tracking-tighter">
-                                STATUS: OPTIMAL
-                            </div>
-<div class="px-3 py-1 bg-primary/80 backdrop-blur-md rounded text-[10px] font-mono text-white border border-white/20 uppercase tracking-tighter">
-                                TEMP: 34°C
-                            </div>
-</div>
-</div>
-</div>
+                    <div class="absolute bottom-1/3 right-1/4 group/h2">
+                        <div class="w-4 h-4 bg-emerald-500 rounded-full animate-pulse cursor-pointer"></div>
+                        <div class="absolute right-6 bottom-0 w-56 p-4 bg-slate-900 border border-emerald-500/40 rounded shadow-2xl opacity-0 scale-95 transition-all group-hover/h2:opacity-100 group-hover/h2:scale-100 pointer-events-none z-20">
+                            <div class="text-[10px] font-mono text-emerald-400 mb-1">INTEGRATED_BMC</div>
+                            <div class="text-xs text-slate-300 mb-2">Dedicated OOB Management. Serial-over-LAN and hard power cycle control via SSH/IPMI.</div>
+                            <div class="font-mono text-[9px] text-emerald-500 uppercase tracking-tighter">Node: Management_Ctrl</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute bottom-4 right-4 font-mono text-[9px] text-slate-500 leading-tight">
+                    TELEMETRY_STREAM: ENABLED<br/>
+                    SYSTEM_HEALTH: 99.99%<br/>
+                    ACTIVE_NODES: 0x0C
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="py-24 border-y border-slate-800 bg-[#020617]" id="uptime">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <div class="text-blue-500 font-mono text-[10px] tracking-[0.3em] uppercase mb-4">Infrastructure as Code</div>
+                <h2 class="text-4xl font-bold mb-6 font-mono uppercase">High Availability &amp; <br/>Zero Downtime.</h2>
+                <p class="text-slate-400 mb-8 leading-relaxed max-w-lg">
+                    Designed for production environments where "too small to fail" isn't an option. Our 3U chassis leverages hotswappable compute nodes and dual PSUs to ensure your API remains reachable during maintenance.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="p-4 border border-slate-800 bg-slate-900/50 rounded">
+                        <span class="material-symbols-outlined text-blue-500 mb-2">sync_alt</span>
+                        <h4 class="font-mono text-sm font-bold text-slate-200">HOTSWAP_ENABLED</h4>
+                        <p class="text-xs text-slate-500 mt-1">Replace nodes without powering down the entire chassis.</p>
+                    </div>
+                    <div class="p-4 border border-slate-800 bg-slate-900/50 rounded">
+                        <span class="material-symbols-outlined text-blue-500 mb-2">power</span>
+                        <h4 class="font-mono text-sm font-bold text-slate-200">DUAL_ATX_PSU</h4>
+                        <p class="text-xs text-slate-500 mt-1">N+1 redundancy for critical power delivery failure protection.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="code-block rounded-lg shadow-2xl overflow-hidden terminal-glow">
+                    <div class="bg-slate-800 px-4 py-2 flex items-center justify-between">
+                        <div class="flex gap-1.5">
+                            <div class="w-2.5 h-2.5 rounded-full bg-slate-600"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-slate-600"></div>
+                            <div class="w-2.5 h-2.5 rounded-full bg-slate-600"></div>
+                        </div>
+                        <div class="font-mono text-[9px] text-slate-500">GET /STATUS/SYSTEM_UPTIME</div>
+                    </div>
+                    <div class="p-6 text-[13px] leading-relaxed">
+<pre class="text-blue-400"><code>{
+  <span class="text-slate-500">"chassis_id"</span>: <span class="text-emerald-400">"SS-3U-099"</span>,
+  <span class="text-slate-500">"uptime_seconds"</span>: <span class="text-emerald-400">31536000</span>,
+  <span class="text-slate-500">"redundancy_status"</span>: {
+    <span class="text-slate-500">"psu_a"</span>: <span class="text-emerald-400">"ONLINE"</span>,
+    <span class="text-slate-500">"psu_b"</span>: <span class="text-emerald-400">"ONLINE"</span>,
+    <span class="text-slate-500">"switch_fabric"</span>: <span class="text-emerald-400">"ACTIVE"</span>
+  },
+  <span class="text-slate-500">"nodes"</span>: [
+    { <span class="text-slate-500">"id"</span>: <span class="text-emerald-400">"node_01"</span>, <span class="text-slate-500">"state"</span>: <span class="text-emerald-400">"PROVISIONED"</span>, <span class="text-slate-500">"type"</span>: <span class="text-emerald-400">"ORIN_NANO"</span> },
+    { <span class="text-slate-500">"id"</span>: <span class="text-emerald-400">"node_02"</span>, <span class="text-slate-500">"state"</span>: <span class="text-emerald-400">"PROVISIONED"</span>, <span class="text-slate-500">"type"</span>: <span class="text-emerald-400">"PI_CM4"</span> }
+  ]
+}</code></pre>
+                    </div>
+                </div>
+                <div class="absolute -bottom-4 -right-4 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded font-mono text-[10px] text-emerald-400 backdrop-blur-md">
+                    HTTP/1.1 200 OK<br/>
+                    UPTIME: 100.0%
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-<!-- Technical Stack -->
-<section class="bg-slate-50/50 dark:bg-slate-900/50 py-24 border-y border-slate-200 dark:border-slate-800">
-<div class="max-w-7xl mx-auto px-6">
-<div class="flex items-end justify-between mb-16">
-<div>
-<h2 class="text-sm font-bold text-primary tracking-[0.3em] uppercase mb-4">The Hardware Ecosystem</h2>
-<h3 class="text-4xl font-bold tracking-tight">Engineered Interoperability</h3>
-</div>
-<div class="hidden md:block text-right">
-<p class="text-sm text-slate-500 font-mono">REF_SYS: 0x22F-49 <br/> BUILD_DATE: 2024.10.12</p>
-</div>
-</div>
-<div class="grid md:grid-cols-3 gap-6">
-<!-- Card 1 -->
-<div class="group bg-white dark:bg-background-dark p-8 rounded-xl tech-border glow-hover transition-all">
-<div class="w-12 h-12 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-6 text-primary">
-<span class="material-symbols-outlined text-3xl">developer_board</span>
-</div>
-<h4 class="text-xl font-bold mb-3">Raspberry Pi CM4</h4>
-<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                                Full support for all Compute Module 4 variants. Exposes PCIe Gen 2, Dual HDMI, and native Gigabit Ethernet.
-                            </p>
-<ul class="space-y-2">
-<li class="flex items-center gap-2 text-[11px] font-mono text-slate-400 group-hover:text-primary transition-colors">
-<span class="w-1 h-1 bg-primary rounded-full"></span> BUS_TYPE: PCIE_X1
-                                </li>
-<li class="flex items-center gap-2 text-[11px] font-mono text-slate-400">
-<span class="w-1 h-1 bg-slate-600 rounded-full"></span> VOLTAGE: 5.0V_DC
-                                </li>
-</ul>
-</div>
-<!-- Card 2 -->
-<div class="group bg-white dark:bg-background-dark p-8 rounded-xl tech-border glow-hover transition-all">
-<div class="w-12 h-12 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-6 text-primary">
-<span class="material-symbols-outlined text-3xl">memory_alt</span>
-</div>
-<h4 class="text-xl font-bold mb-3">Nvidia Jetson SOM</h4>
-<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                                Hardware-compatible carrier slots for Jetson Nano, Orin Nano, and Orin NX. Unlock CUDA performance at the edge.
-                            </p>
-<ul class="space-y-2">
-<li class="flex items-center gap-2 text-[11px] font-mono text-slate-400 group-hover:text-primary transition-colors">
-<span class="w-1 h-1 bg-primary rounded-full"></span> CUDA_CORES: UP_TO_1024
-                                </li>
-<li class="flex items-center gap-2 text-[11px] font-mono text-slate-400">
-<span class="w-1 h-1 bg-slate-600 rounded-full"></span> TOPS: 100_INT8
-                                </li>
-</ul>
-</div>
-<!-- Card 3 -->
-<div class="group bg-white dark:bg-background-dark p-8 rounded-xl tech-border glow-hover transition-all">
-<div class="w-12 h-12 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-6 text-primary">
-<span class="material-symbols-outlined text-3xl">bolt</span>
-</div>
-<h4 class="text-xl font-bold mb-3">PoE+ Management</h4>
-<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                                Single-cable deployment via Power over Ethernet Plus. Software-controllable power cycles for remote resets.
-                            </p>
-<ul class="space-y-2">
-<li class="flex items-center gap-2 text-[11px] font-mono text-slate-400 group-hover:text-primary transition-colors">
-<span class="w-1 h-1 bg-primary rounded-full"></span> PROTOCOL: IEEE_802.3AT
-                                </li>
-<li class="flex items-center gap-2 text-[11px] font-mono text-slate-400">
-<span class="w-1 h-1 bg-slate-600 rounded-full"></span> I2C_MONITORING: ACTIVE
-                                </li>
-</ul>
-</div>
-</div>
-</div>
+<section class="py-24 bg-slate-900/20" id="specs">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-end mb-16 border-b border-slate-800 pb-8">
+            <div>
+                <div class="text-blue-500 text-[10px] font-mono tracking-widest uppercase mb-2">Specifications</div>
+                <h2 class="text-4xl font-bold font-mono">CHASSIS_ARCH_V2</h2>
+            </div>
+            <div class="hidden md:block text-right font-mono text-[10px] text-slate-500 uppercase tracking-widest">
+                Interface: PCIe Gen3 x32 Backplane<br/>
+                Storage: Multi-slot NVMe Fabric
+            </div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-8 border border-slate-800 bg-slate-900/40 rounded hover:border-blue-500/50 transition-all group">
+                <div class="w-12 h-12 rounded bg-slate-800 flex items-center justify-center mb-6 border border-slate-700">
+                    <span class="material-symbols-outlined text-blue-500">memory</span>
+                </div>
+                <h3 class="text-xl font-bold font-mono mb-4">Raspberry Pi CM4</h3>
+                <p class="text-sm text-slate-400 mb-6 leading-relaxed">
+                    High-density general purpose compute. Optimized for distributed edge workloads and CI/CD pipelines.
+                </p>
+                <ul class="font-mono text-[10px] space-y-3 text-slate-500 uppercase">
+                    <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> PCIE: 3X1 GEN2 @ M.2</li>
+                    <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> BUS: SERIAL_CON_V4</li>
+                    <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> LAN: 1GBE NATIVE</li>
+                </ul>
+            </div>
+            <div class="p-8 border border-slate-800 bg-slate-900/40 rounded hover:border-blue-500/50 transition-all group">
+                <div class="w-12 h-12 rounded bg-slate-800 flex items-center justify-center mb-6 border border-slate-700">
+                    <span class="material-symbols-outlined text-emerald-500">developer_board</span>
+                </div>
+                <h3 class="text-xl font-bold font-mono mb-4">Nvidia Jetson SOM</h3>
+                <p class="text-sm text-slate-400 mb-6 leading-relaxed">
+                    The ultimate AI edge node. Dedicated high-bandwidth lanes for model inference and high-speed networking.
+                </p>
+                <ul class="font-mono text-[10px] space-y-3 text-slate-500 uppercase">
+                    <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span> PCIE: 4X4 GEN3 @ M.2</li>
+                    <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span> NET: DEDICATED X4 10G</li>
+                    <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span> AI: 40-100 TOPS</li>
+                </ul>
+            </div>
+            <div class="p-8 border border-slate-800 bg-slate-900/40 rounded hover:border-blue-500/50 transition-all group">
+                <div class="w-12 h-12 rounded bg-slate-800 flex items-center justify-center mb-6 border border-slate-700">
+                    <span class="material-symbols-outlined text-blue-400">hub</span>
+                </div>
+                <h3 class="text-xl font-bold font-mono mb-4">PCIe Switch Fabric</h3>
+                <p class="text-sm text-slate-400 mb-6 leading-relaxed">
+                    Massive I/O flexibility. Scaling AI accelerators and NVMe storage across nodes with zero-latency fabric.
+                </p>
+                <ul class="font-mono text-[10px] space-y-3 text-slate-500 uppercase">
+                    <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full"></span> CHIP: PEX_9700 SERIES</li>
+                    <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full"></span> TYPE: NON-TRANSPARENT</li>
+                    <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full"></span> CONFIG: DYNAMIC_ENUM</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </section>
-<!-- Use Cases -->
-<section class="py-24 max-w-7xl mx-auto px-6">
-<div class="grid lg:grid-cols-2 gap-16 items-center">
-<div class="order-2 lg:order-1 relative">
-<div class="grid grid-cols-2 gap-4">
-<div class="space-y-4">
-<div class="h-48 rounded-lg bg-slate-800 flex items-center justify-center overflow-hidden border border-slate-700">
-<img alt="Server room with rows of blinking LED lights" class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all" data-alt="Server racks with blue blinking lights" src="{{ "images/server-room.jpg" | relURL }}"/>
-</div>
-<div class="h-64 rounded-lg bg-primary/20 flex items-end p-6 border border-primary/30">
-<div class="font-mono text-xs uppercase tracking-widest font-bold">Local_LLM_Node</div>
-</div>
-</div>
-<div class="space-y-4 pt-8">
-<div class="h-64 rounded-lg bg-slate-200 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 flex flex-col items-center justify-center p-8 text-center">
-<span class="material-symbols-outlined text-4xl mb-4 text-primary">router</span>
-<span class="text-xs font-mono">Edge_Networking_Stack</span>
-</div>
-<div class="h-48 rounded-lg bg-slate-800 overflow-hidden border border-slate-700">
-<img alt="Conceptual hardware pattern representing data flow" class="w-full h-full object-cover opacity-40 grayscale" data-alt="Modern server hardware components pattern" src="{{ "images/pattern.jpg" | relURL }}"/>
-</div>
-</div>
-</div>
-</div>
-<div class="order-1 lg:order-2 space-y-6">
-<h2 class="text-sm font-bold text-primary tracking-[0.3em] uppercase">Use Cases</h2>
-<h3 class="text-4xl font-bold tracking-tight">Deploying at the Edge.</h3>
-<p class="text-slate-500 dark:text-slate-400 leading-relaxed">
-                            Shelfscale nodes are built for environments where space, power, and noise are constrained. From running computer vision at a remote industrial site to hosting your local Kubernetes lab.
-                        </p>
-<div class="space-y-4 pt-6">
-<div class="flex gap-4 group">
-<div class="mt-1 text-primary"><span class="material-symbols-outlined">visibility</span></div>
-<div>
-<h5 class="font-bold group-hover:text-primary transition-colors">Edge AI &amp; Inference</h5>
-<p class="text-sm text-slate-500">Run localized object detection, language models, or sensor fusion with Jetson SOMs.</p>
-</div>
-</div>
-<div class="flex gap-4 group">
-<div class="mt-1 text-primary"><span class="material-symbols-outlined">home_storage</span></div>
-<div>
-<h5 class="font-bold group-hover:text-primary transition-colors">Distributed Homelabs</h5>
-<p class="text-sm text-slate-500">Silent, rack-mountable compute for K3s clusters, Proxmox, or TrueNAS Scale.</p>
-</div>
-</div>
-<div class="flex gap-4 group">
-<div class="mt-1 text-primary"><span class="material-symbols-outlined">factory</span></div>
-<div>
-<h5 class="font-bold group-hover:text-primary transition-colors">Industrial Automation</h5>
-<p class="text-sm text-slate-500">Hardened hardware for PLC replacement, gateway nodes, and remote monitoring.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
+<section class="py-24 border-t border-slate-800" id="bmc">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+        <div class="order-2 lg:order-1 relative">
+            <div class="code-block rounded-lg overflow-hidden terminal-glow">
+                <div class="bg-slate-800 px-4 py-2 flex items-center gap-2">
+                    <div class="flex gap-1.5">
+                        <div class="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/50"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-emerald-500/50"></div>
+                    </div>
+                    <div class="mx-auto font-mono text-[9px] text-slate-500">root@shelfscale-bmc: ~ (OOB_MGMT)</div>
+                </div>
+                <div class="p-6 font-mono text-[13px] leading-relaxed text-emerald-400 min-h-[320px]">
+                    <div class="mb-2">shelfscale login: admin</div>
+                    <div class="mb-2 text-slate-500">Password: ••••••••••••</div>
+                    <div class="mb-4 text-slate-600 border-b border-slate-800 pb-2">Last login: 2024-10-23 09:42:01 UTC via ttyS0</div>
+                    <div class="mb-2"># bmc-tool --status</div>
+                    <div class="grid grid-cols-2 gap-y-1 mb-4 text-[11px]">
+                        <div class="text-slate-500">NODE_STATUS: <span class="text-emerald-400">HEALTHY</span></div>
+                        <div class="text-slate-500">CHASSIS_TEMP: <span class="text-emerald-400">38°C</span></div>
+                        <div class="text-slate-500">PRIMARY_PSU: <span class="text-emerald-400">ACTIVE</span></div>
+                        <div class="text-slate-500">BACKUP_PSU: <span class="text-yellow-400">STDBY</span></div>
+                    </div>
+                    <div class="mb-2"># node-power --reboot --node 05</div>
+                    <div class="text-slate-400">[INFO] Sending hard reset to Node 05...</div>
+                    <div class="text-emerald-400">[OK] Node 05 power cycled successfully.</div>
+                    <div class="animate-pulse inline-block w-2 h-4 bg-emerald-500 align-middle ml-1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="order-1 lg:order-2">
+            <div class="text-blue-500 font-mono text-[10px] tracking-[0.3em] uppercase mb-4">Integrated BMC</div>
+            <h2 class="text-4xl font-bold mb-6 font-mono uppercase">Developer Tooling for Remote Recovery.</h2>
+            <p class="text-slate-400 mb-8 leading-relaxed">
+                Never lose access to your bare metal. Every Shelfscale chassis features a dedicated management controller for remote recovery, Serial-over-LAN (SoL), and environment telemetry.
+            </p>
+            <div class="space-y-6">
+                <div class="flex gap-4">
+                    <span class="material-symbols-outlined text-blue-500">terminal</span>
+                    <div>
+                        <h4 class="font-mono text-sm font-bold text-slate-200 uppercase tracking-widest">Out-of-Band SSH</h4>
+                        <p class="text-xs text-slate-500 mt-1">Direct access to node consoles even if the primary OS is unresponsive.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <span class="material-symbols-outlined text-blue-500">api</span>
+                    <div>
+                        <h4 class="font-mono text-sm font-bold text-slate-200 uppercase tracking-widest">Redfish / IPMI Support</h4>
+                        <p class="text-xs text-slate-500 mt-1">Seamless integration with industry-standard orchestration and monitoring tools.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <span class="material-symbols-outlined text-blue-500">security</span>
+                    <div>
+                        <h4 class="font-mono text-sm font-bold text-slate-200 uppercase tracking-widest">Hardware Root of Trust</h4>
+                        <p class="text-xs text-slate-500 mt-1">Encrypted firmware and secure boot for the management plane.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-<!-- CTA / Newsletter -->
-<section class="bg-primary py-20 mt-12 overflow-hidden relative">
-<div class="absolute inset-0 opacity-10 blueprint-grid"></div>
-<div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
-<h2 class="text-white text-3xl md:text-4xl font-black tracking-tight mb-4 uppercase">Join the Beta Hardware Batch</h2>
-<p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
-                        We are shipping early samples to verified engineers. Sign up for technical updates and pre-order availability.
-                    </p>
-<form action="/api/contact" method="POST" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-<div class="relative flex-1">
-<span class="absolute left-4 top-1/2 -translate-y-1/2 text-white/50 font-mono text-sm">&gt;</span>
-<input name="email" class="w-full bg-blue-700/50 border border-blue-400/30 text-white placeholder:text-white/40 pl-8 pr-4 py-4 rounded focus:ring-2 focus:ring-white outline-none font-mono text-sm" placeholder="root@engineer.io" type="email"/>
-</div>
-<button class="bg-white text-primary px-8 py-4 rounded font-bold uppercase text-xs tracking-widest hover:bg-slate-100 transition-colors" type="submit">
-                            Initialize
-                        </button>
-</form>
-<p class="mt-6 text-white/40 text-[10px] uppercase font-mono tracking-widest">NO SPAM. ONLY TECHNICAL SPECS AND RELEASES.</p>
-</div>
+<section class="py-24 bg-blue-600 text-white grid-bg">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-5xl font-bold mb-6 tracking-tight font-mono uppercase">INITIALIZE_CLUSTER_V2</h2>
+        <p class="text-blue-100 max-w-2xl mx-auto mb-12 font-mono text-sm">
+            3U Early Adopter kits are now shipping. Provision your local cloud with high-density Nvidia and Pi nodes.
+        </p>
+        <div class="max-w-md mx-auto">
+            <div class="flex p-1 bg-white/10 backdrop-blur rounded-lg border border-white/20">
+                <input class="bg-transparent border-none focus:ring-0 text-white placeholder:text-blue-200 flex-grow px-4 font-mono text-sm" placeholder="root@shelfscale.cloud" type="email"/>
+                <button class="bg-white text-blue-600 px-6 py-2 rounded font-mono font-bold hover:bg-blue-50 transition-colors text-sm">INITIALIZE</button>
+            </div>
+            <p class="mt-4 font-mono text-[9px] text-blue-200 uppercase tracking-widest">SERIAL_NO: RR-990-PX // Q4_PROD_RELEASE</p>
+        </div>
+    </div>
 </section>
-</main>
 {{ end }}
