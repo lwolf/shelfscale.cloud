@@ -1,0 +1,4 @@
+baseURL = "https://shelfscale.cloud/"
+languageCode = "en-us"
+title = "shelfscale.cloud | Engineering-Grade Blade Clusters"
+theme = "shelfscale"

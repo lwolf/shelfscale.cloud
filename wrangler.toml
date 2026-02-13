@@ -1,0 +1,8 @@
+name = "shelfscale-landing"
+main = "src/worker.js"
+compatibility_date = "2024-02-12"
+
+# Serve static assets from the Hugo build directory
+[assets]
+directory = "./public"
+binding = "ASSETS"

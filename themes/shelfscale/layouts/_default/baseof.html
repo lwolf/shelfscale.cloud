@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>shelfscale.cloud | Engineering-Grade Blade Clusters</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .blueprint-grid {
+            background-image:
+                linear-gradient(to right, rgba(19, 91, 236, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(19, 91, 236, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .tech-border {
+            border: 1px solid rgba(146, 164, 201, 0.1);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 15px rgba(19, 91, 236, 0.3);
+            border-color: #135bec;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 selection:bg-primary selection:text-white">
+<div class="relative min-h-screen w-full flex flex-col overflow-x-hidden blueprint-grid">
+<!-- Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-primary rounded">
+<span class="material-symbols-outlined text-white text-xl">memory</span>
+</div>
+<span class="text-lg font-bold tracking-tight font-mono uppercase">shelfscale.cloud</span>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-medium hover:text-primary transition-colors font-mono" href="#">01_THE_STACK</a>
+<a class="text-sm font-medium hover:text-primary transition-colors font-mono" href="#">02_USE_CASES</a>
+<a class="text-sm font-medium hover:text-primary transition-colors font-mono" href="#">03_DOCS</a>
+<a class="text-sm font-medium hover:text-primary transition-colors font-mono" href="https://github.com">04_GITHUB</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex items-center gap-2 px-4 py-2 bg-primary text-white rounded font-bold text-xs tracking-widest uppercase hover:bg-blue-700 transition-all">
+<span>Deploy Node</span>
+<span class="material-symbols-outlined text-sm">terminal</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center border border-slate-300 dark:border-slate-700">
+<span class="material-symbols-outlined text-sm">person</span>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col">{{ block "main" . }}{{ end }}
+</main>
+<!-- Footer -->
+<footer class="border-t border-slate-200 dark:border-slate-800 py-12 bg-white dark:bg-background-dark">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3 opacity-60 grayscale">
+<div class="p-1 bg-slate-400 rounded">
+<span class="material-symbols-outlined text-white text-sm">memory</span>
+</div>
+<span class="text-sm font-bold tracking-tight font-mono uppercase">shelfscale.cloud</span>
+</div>
+<div class="flex gap-8">
+<a class="text-xs text-slate-500 hover:text-primary font-mono transition-colors" href="#">ERRATA_LOGS</a>
+<a class="text-xs text-slate-500 hover:text-primary font-mono transition-colors" href="#">DATASHEETS</a>
+<a class="text-xs text-slate-500 hover:text-primary font-mono transition-colors" href="#">LICENSING</a>
+</div>
+<div class="text-xs text-slate-400 font-mono">
+                    © 2024 SHELFSCALE_SYSTEMS // v2.1.0_PROD
+                </div>
+</div>
+</footer>
+</div>
+</body></html>
