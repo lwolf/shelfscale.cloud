@@ -90,7 +90,7 @@
                 </div>
             </div>
             <div class="relative">
-                <div class="code-block rounded-lg shadow-2xl overflow-hidden terminal-glow">
+                <div class="code-block rounded-lg shadow-2xl overflow-hidden terminal-glow overflow-x-auto">
                     <div class="bg-slate-800 px-4 py-2 flex items-center justify-between">
                         <div class="flex gap-1.5">
                             <div class="w-2.5 h-2.5 rounded-full bg-slate-600"></div>
@@ -109,8 +109,16 @@
     <span class="text-slate-500">"switch_fabric"</span>: <span class="text-emerald-400">"ACTIVE"</span>
   },
   <span class="text-slate-500">"nodes"</span>: [
-    { <span class="text-slate-500">"id"</span>: <span class="text-emerald-400">"node_01"</span>, <span class="text-slate-500">"state"</span>: <span class="text-emerald-400">"PROVISIONED"</span>, <span class="text-slate-500">"type"</span>: <span class="text-emerald-400">"ORIN_NANO"</span> },
-    { <span class="text-slate-500">"id"</span>: <span class="text-emerald-400">"node_02"</span>, <span class="text-slate-500">"state"</span>: <span class="text-emerald-400">"PROVISIONED"</span>, <span class="text-slate-500">"type"</span>: <span class="text-emerald-400">"PI_CM4"</span> }
+    {
+      <span class="text-slate-500">"id"</span>: <span class="text-emerald-400">"node_01"</span>,
+      <span class="text-slate-500">"state"</span>: <span class="text-emerald-400">"PROVISIONED"</span>,
+      <span class="text-slate-500">"type"</span>: <span class="text-emerald-400">"ORIN_NANO"</span>
+    },
+    {
+      <span class="text-slate-500">"id"</span>: <span class="text-emerald-400">"node_02"</span>,
+      <span class="text-slate-500">"state"</span>: <span class="text-emerald-400">"PROVISIONED"</span>,
+      <span class="text-slate-500">"type"</span>: <span class="text-emerald-400">"PI_CM4"</span>
+    }
   ]
 }</code></pre>
                     </div>
@@ -245,7 +253,7 @@
 </section>
 <section class="py-24 bg-blue-600 text-white grid-bg">
     <div class="max-w-7xl mx-auto px-6 text-center">
-        <h2 class="text-5xl font-bold mb-6 tracking-tight font-mono uppercase">INITIALIZE_CLUSTER_V2</h2>
+        <h2 class="text-xl sm:text-2xl md:text-5xl font-bold mb-6 tracking-tight font-mono uppercase">INITIALIZE_CLUSTER_V2</h2>
         <p class="text-blue-100 max-w-2xl mx-auto mb-12 font-mono text-sm">
             3U Early Adopter kits are now shipping. Provision your local cloud with high-density Nvidia and Pi nodes.
         </p>
