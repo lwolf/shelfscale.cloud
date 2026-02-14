@@ -1,4 +1,74 @@
-{{ define "main" }}
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+	<meta name="generator" content="Hugo 0.155.3"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>shelfscale.cloud | Engineering-Grade Blade Clusters</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-[#020617] text-slate-100 font-sans;
+            }
+        }
+        :root {
+            --primary: #2563eb;
+            --terminal-green: #10b981;
+            --dev-border: #1e293b;
+        }
+        .grid-bg {
+            background-image: radial-gradient(circle at 2px 2px, #1e293b 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: rgba(37, 99, 235, 0.1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: scan 8s linear infinite;
+        }
+        @keyframes scan {
+            from { top: 0; }
+            to { top: 100%; }
+        }
+        .terminal-glow {
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.2);
+        }
+        .code-block {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--dev-border);
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+</head>
+<body class="selection:bg-blue-500 selection:text-white">
+    <nav class="sticky top-0 z-50 border-b border-slate-800 bg-[#020617]/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white text-lg">dns</span>
+                </div>
+                <span class="font-mono font-bold tracking-tight">SHELFSCALE.CLOUD</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 font-mono text-[10px] uppercase tracking-[0.2em] text-slate-400">
+                <a class="hover:text-blue-500 transition-colors" href="#specs">01_THE_STACK</a>
+                <a class="hover:text-blue-500 transition-colors" href="#uptime">02_ZERO_DOWNTIME</a>
+                <a class="hover:text-blue-500 transition-colors" href="#bmc">03_REMOTE_MGMT</a>
+                <a class="hover:text-blue-500 transition-colors" href="#">04_GITHUB</a>
+            </div>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white font-mono text-xs px-4 py-2 rounded flex items-center gap-2 transition-all terminal-glow">
+                <span>$ PROVISION_NODE</span>
+                <span class="material-symbols-outlined text-sm">terminal</span>
+            </button>
+        </div>
+    </nav>
+
+
 <header class="relative min-h-[90vh] flex flex-col justify-center overflow-hidden grid-bg">
     <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         <div class="z-10">
@@ -40,7 +110,7 @@
             <div class="relative aspect-square bg-slate-900/50 rounded-2xl border border-slate-800 overflow-hidden p-8 flex items-center justify-center">
                 <div class="scanline"></div>
                 <div class="relative w-full h-full">
-                    <img alt="PCB Schematic Visualization" class="w-full h-full object-contain opacity-40 mix-blend-screen" src="{{ "images/pcb_schematic.png" | relURL }}"/>
+                    <img alt="PCB Schematic Visualization" class="w-full h-full object-contain opacity-40 mix-blend-screen" src="/images/pcb_schematic.png"/>
                     <div class="absolute top-1/4 left-1/3 group/h1">
                         <div class="w-4 h-4 bg-blue-500 rounded-full animate-pulse cursor-pointer"></div>
                         <div class="absolute left-6 top-0 w-56 p-4 bg-slate-900 border border-blue-500/40 rounded shadow-2xl opacity-0 scale-95 transition-all group-hover/h1:opacity-100 group-hover/h1:scale-100 pointer-events-none z-20">
@@ -258,4 +328,25 @@
         </div>
     </div>
 </section>
-{{ end }}
+
+
+    <footer class="py-12 border-t border-slate-800 bg-[#020617] text-slate-500">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 font-mono text-[10px] uppercase tracking-[0.2em]">
+            <div class="flex items-center gap-4">
+                <div class="w-6 h-6 bg-slate-800 rounded flex items-center justify-center border border-slate-700">
+                    <span class="material-symbols-outlined text-[14px]">dns</span>
+                </div>
+                <span class="font-bold text-slate-300">SHELFSCALE.CLOUD</span>
+            </div>
+            <div class="flex gap-12">
+                <a class="hover:text-blue-500" href="#">SCHEMATICS</a>
+                <a class="hover:text-blue-500" href="#">DATASHEETS</a>
+                <a class="hover:text-blue-500" href="#">API_DOCS</a>
+            </div>
+            <div class="text-right">
+                © 2024 SHELFSCALE_SYSTEMS // 3U_PLATFORM_V2.2
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+Watching for changes in /app/content/blog, /app/themes/shelfscale/layouts/_default, /app/themes/shelfscale/static/images
+Watching for config changes in /app/hugo.toml
+Start building sites …
+hugo v0.155.3 linux/amd64 BuildDate=unknown
+
+WARN  found no layout file for "html" for kind "section": You should create a template file which matches Hugo Layouts Lookup Rules for this combination.
+WARN  found no layout file for "html" for kind "taxonomy": You should create a template file which matches Hugo Layouts Lookup Rules for this combination.
+
+                  │ EN
+──────────────────┼────
+ Pages            │  6
+ Paginator pages  │  0
+ Non-page files   │  0
+ Static files     │  4
+ Processed images │  0
+ Aliases          │  0
+ Cleaned          │  0
+
+Built in 8 ms
+Environment: "development"
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Press Ctrl+C to stop
